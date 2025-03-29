@@ -16,7 +16,7 @@ public class JobController {
     public JobController(JobService jobService) {
         this.jobService = jobService;
     }
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<Job>> findAll(){
         return ResponseEntity.ok(jobService.findAll());
     }
@@ -28,7 +28,7 @@ public class JobController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Job> findById(@PathVariable int id){
+    public ResponseEntity<Job> findById(@PathVariable long id){
         Job job = jobService.jobById(id);
         if(job == null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

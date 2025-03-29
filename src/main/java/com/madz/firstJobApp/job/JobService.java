@@ -7,7 +7,7 @@ public interface JobService {
     List<Job>  findAll();
     void createJob(Job job);
 
-    Job jobById(int id);
+    Job jobById(long id);
 
     boolean deleteById(long id);
 

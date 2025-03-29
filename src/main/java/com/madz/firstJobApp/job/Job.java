@@ -1,12 +1,32 @@
 package com.madz.firstJobApp.job;
 
+
+import jakarta.persistence.*;
+
+@Entity
+//@Table(name = "Job_table")
 public class Job {
-    private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
     private String title;
     private String description;
     private String minsalary;
     private String maxsalary;
     private String location;
+
+    public Job(String location, String maxsalary, String minsalary, String description, String title, long id) {
+        this.location = location;
+        this.maxsalary = maxsalary;
+        this.minsalary = minsalary;
+        this.description = description;
+        this.title = title;
+        this.id = id;
+    }
+
+    public Job() {
+
+    }
 
     public String getMinsalary() {
         return minsalary;
