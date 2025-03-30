@@ -1,6 +1,7 @@
 package com.madz.firstJobApp.job;
 
 
+import com.madz.firstJobApp.company.Company;
 import jakarta.persistence.*;
 
 @Entity
@@ -14,6 +15,17 @@ public class Job {
     private String minsalary;
     private String maxsalary;
     private String location;
+
+    @ManyToOne
+    private Company company;
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
 
     public Job(String location, String maxsalary, String minsalary, String description, String title, long id) {
         this.location = location;
