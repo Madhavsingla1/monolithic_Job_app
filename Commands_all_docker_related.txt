@@ -26,6 +26,9 @@
  1015  history|| tail -n 20 
  1016  history > Commands_all_docker_related.txt
 
+  ./mvnw spring-boot:build-image "-Dspring-boot.build-image.imageName=luvrandhawa/firstjob"
+
+ 
  
  Start the PostgreSQL service: 
  
