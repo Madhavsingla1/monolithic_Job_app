@@ -1,0 +1,40 @@
+  990  git add .
+  991  git commit - m "API's in Java"
+  992  git add .
+  993  git commit -m "Added All the Starter Api's now started with JPA and H2 Database for Database integration"
+  994  git add .
+  995  git commit -m "Completing the application by adding the company and Review functionalities"
+  996  reboot
+  997  git add .
+  998  git commit -m "Completed the App with all the components. Will Start on Actuator"
+  999  git add .
+ 1000  git commit -m "Working with Actuator"
+ 1001  docker run hello-world
+ 1002  docker login
+ 1003  docker push luvrandhawa/firstjob
+ 1004  docker images
+ 1005  docker ps
+ 1006  docker run -p 8080:8080 luvrandhawa/firstjob
+ 1007  docker run -d --name db -e POSTGRES_PASSWORD=luv postgres
+ 1008  docker images
+ 1009  docker ps
+ 1010  docker run -d --name pgadmin -e PGADMIN_DEFAULT_EMAIL=admin@admin.com -e PGADMIN_DEFAULT_PASSWORD=luv dpage/pgadmin
+ 1011  docker run -d --name pgadmin -e PGADMIN_DEFAULT_EMAIL=admin@admin.com -e PGADMIN_DEFAULT_PASSWORD=luv dpage/pgadmin4
+ 1012  history > Commands_all_docker_related.txt
+ 1013  tail -n 20 history > Commands_all_docker_related.txt
+ 1014  history tail -n 20 > Commands_all_docker_related.txt
+ 1015  history|| tail -n 20 
+ 1016  history > Commands_all_docker_related.txt
+
+  ./mvnw spring-boot:build-image "-Dspring-boot.build-image.imageName=luvrandhawa/firstjob"
+
+ 
+ 
+ Start the PostgreSQL service: 
+ 
+ docker run -d \ --name postgres_container \ -e FOSTGRES_USER=embarkx \ -e POSTGRES PASSWORD=embarkx \ -e PGDATA=/data/postgres \ -v postgres:/data/postgres \ -p 5432:5432 \ --network postgres \ --restart unless-stopped \ postgres 
+ 
+ Start the pgAdmin service: 
+ 
+ 
+ docker run -d --name pgadmin_container \ -e PGADMIN_DEFAULT_EMAIL=pgadmin4@pgadmin.org \ -e PGADMIN_DEFAULT_PASSWORD=admin \ -e PGADMIN_CONFIG_SERVER_MODE=False \ -v pgadmin:/var/lib/pgadmin \ -p 5050:80 \ --network postgres \ --restart unless-stopped \ dpage/pgadmin4
